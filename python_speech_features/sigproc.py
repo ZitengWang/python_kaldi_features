@@ -34,7 +34,7 @@ def framesig(sig, frame_len, frame_step, dither=1.0, preemph=0.97, remove_dc_off
     if slen <= frame_len:
         numframes = 1
     else:
-        numframes = 1 + (( slen - frame_len) / frame_step)
+        numframes = 1 + (( slen - frame_len) // frame_step)
 
     # check kaldi/src/feat/feature-window.h
     padsignal = sig[:(numframes-1)*frame_step+frame_len]
